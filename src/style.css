@@ -175,7 +175,7 @@ h1 span, .section-heading h2 span, .about-copy h2 span, .languages-inner h2 span
 .languages-section { background: #f0f4ef; padding-block: 83px; border-block: 1px solid #e6ece5; }
 .languages-inner { display: grid; grid-template-columns: 1fr .75fr; align-items: center; gap: 70px; }
 .languages-inner h2 { font-size: clamp(42.55px, 4.6vw, 56.35px); }
-.language-list { border-top: 1px solid #d5dfd5; }
+.language-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; border-top: 1px solid #d5dfd5; }
 .language-item { display: flex; align-items: center; gap: 15px; min-height: 52px; border-bottom: 1px solid #d5dfd5; }
 .language-item > span { color: #98a59a; font-size: 10.35px; }
 .language-item b { font: 600 14.95px var(--serifless); flex: 1; }
@@ -197,21 +197,19 @@ h1 span, .section-heading h2 span, .about-copy h2 span, .languages-inner h2 span
 .evidence-side small { display: block; margin-top: 17px; font-size: 8.05px; letter-spacing: 1px; color: #89968d; }
 
 .testimonial-section { background: #dfe9df; padding-block: 83px; }
-.testimonial-inner { display: grid; grid-template-columns: 90px 1fr 60px; gap: 20px; align-items: start; }
-.quote-mark { font: 600 126.5px/1 Georgia, serif; color: #83a88a; margin-top: -5px; }
-.testimonial-content blockquote { max-width: 740px; font: 500 clamp(28.75px, 4.14vw, 48.3px)/1.3 var(--serifless); letter-spacing: -1.5px; margin: 20px 0 28px; }
-.testimonial-attribution { display: flex; align-items: center; gap: 10px; }
-.avatar-placeholder { width: 32px; height: 32px; border: 1px dashed #9db29d; display: grid; place-items: center; border-radius: 50%; color: #6f9877; }
-.testimonial-attribution b, .testimonial-attribution small { display: block; font-size: 10.35px; }
-.testimonial-attribution small { margin-top: 3px; color: #7e8c81; }
-.testimonial-count { justify-self: end; font-size: 10.35px; color: #748479; }
-.testimonial-count i { color: #a2b2a4; font-style: normal; }
+.testimonial-inner { display: grid; grid-template-columns: 1fr; gap: 18px; align-items: center; }
+.testimonial-content { min-height: 255px; padding: 34px 58px; border: 1px solid #b8cbbb; border-radius: 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.testimonial-name { min-height: 32px; display: grid; place-items: center; }
+.testimonial-name img { display: block; width: 125px; max-height: 42px; object-fit: contain; }
+.testimonial-content blockquote { max-width: 740px; font: 500 clamp(19px, 2.25vw, 27px)/1.5 var(--serifless); letter-spacing: -.4px; margin: 20px 0 24px; }
 
 .contact-section { padding-block: 100px; }
 .contact-card { display: grid; grid-template-columns: 1fr .65fr; min-height: 410px; background: var(--deep); color: white; }
 .contact-left { padding: 55px 60px; }
 .contact-left .eyebrow { color: #a0b5a7; }
-.contact-left h2 { font-size: clamp(54.05px, 6.32vw, 75.9px); letter-spacing: -4px; }
+.contact-heading-row { display: flex; align-items: flex-start; gap: 12px; }
+.contact-left h2 { flex: 1; font-size: clamp(54.05px, 6.32vw, 75.9px); letter-spacing: -4px; }
+.contact-client-name { flex: 0 0 auto; margin-top: 12px; color: #c5e9bd; font-size: 14px; font-weight: 600; letter-spacing: .04em; }
 .contact-left h2 span { color: var(--lime); }
 .contact-left > p { max-width: 375px; color: #a7b5ab; font-size: 13.8px; line-height: 1.8; margin: 19px 0 23px; }
 .button-lime { background: var(--accent-soft); color: var(--deep); }
@@ -222,6 +220,16 @@ h1 span, .section-heading h2 span, .about-copy h2 span, .languages-inner h2 span
 .contact-right > span { position: relative; z-index: 1; }
 .contact-right > a { position: absolute; right: 26px; bottom: 24px; display: grid; place-items: center; width: 37px; height: 37px; border: 1px solid rgba(207,228,204,.28); border-radius: 50%; color: #c5e9bd; }
 .contact-right > a span { font-size: 17.25px; }
+.contact-right > .testimonial-section { width: 100%; padding: 0; background: transparent; }
+.contact-right .testimonial-inner { width: 100%; margin: 0; display: block; }
+.contact-right .testimonial-content { min-height: 0; padding: 12px 20px; border: 0; border-radius: 0; }
+.contact-right .testimonial-name { min-height: 24px; }
+.contact-right .testimonial-name img { width: 80px; max-height: 28px; }
+.contact-right .testimonial-content blockquote { max-width: 390px; margin: 8px 0; color: #e0eeeb; font-size: 13px; line-height: 1.5; letter-spacing: 0; }
+.contact-right .testimonial-content blockquote::before,
+.contact-right .testimonial-content blockquote::after { color: var(--lime); font-size: 2em; font-weight: 700; line-height: 0; vertical-align: -.2em; }
+.contact-right .testimonial-content blockquote::before { content: "“"; margin-right: .08em; }
+.contact-right .testimonial-content blockquote::after { content: "”"; margin-left: .08em; }
 
 .site-footer { background: #102b29; color: #dbe5dc; padding-top: 62px; }
 .footer-main { display: grid; grid-template-columns: 1.2fr repeat(5, minmax(0, 1fr)); gap: 20px; padding-bottom: 55px; }
@@ -308,24 +316,28 @@ h1 span, .section-heading h2 span, .about-copy h2 span, .languages-inner h2 span
   .about-copy > p { font-size: 12.65px; }
   .languages-section { padding-block: 68px; }
   .languages-inner { grid-template-columns: 1fr; gap: 30px; }
+  .language-list { column-gap: 14px; }
   .evidence-section { padding-block: 65px; }
   .evidence-card { grid-template-columns: 1fr; gap: 17px; padding: 27px 22px; }
   .evidence-mark { width: 32px; height: 32px; }
   .evidence-copy h2 { font-size: 40.25px; }
   .evidence-side { grid-column: 1; }
   .testimonial-section { padding-block: 62px; }
-  .testimonial-inner { grid-template-columns: 37px 1fr; gap: 10px; }
-  .quote-mark { font-size: 74.75px; }
-  .testimonial-content blockquote { font-size: 28.75px; letter-spacing: -.8px; margin: 17px 0 23px; }
-  .testimonial-count { display: none; }
+  .testimonial-inner { grid-template-columns: 1fr; gap: 14px; }
+  .testimonial-content { min-height: 245px; padding: 35px 24px; border-radius: 16px; }
+  .testimonial-content blockquote { font-size: 18px; letter-spacing: 0; margin: 17px 0 23px; }
   .contact-section { padding-block: 65px; }
   .contact-card { grid-template-columns: 1fr; }
   .contact-left { padding: 37px 25px 40px; }
-  .contact-left h2 { font-size: 63.25px; letter-spacing: -3px; }
+  .contact-heading-row { gap: 8px; }
+  .contact-left h2 { font-size: 42px; letter-spacing: -2px; }
+  .contact-client-name { margin-top: 8px; font-size: 12px; }
   .contact-left > p { font-size: 12.65px; }
   .button-lime { font-size: 11.5px; gap: 9px; padding: 14px; }
   .contact-right { min-height: 250px; }
   .contact-orbit { width: 300px; height: 300px; }
+  .contact-right .testimonial-content { padding: 8px 14px; }
+  .contact-right .testimonial-content blockquote { font-size: 12px; }
   .footer-main { grid-template-columns: 1fr 1fr; gap: 34px 20px; padding-bottom: 37px; }
   .footer-brand-col { grid-column: 1 / 3; }
   .footer-links-col { font-size: 10.35px; }
@@ -372,8 +384,6 @@ h1 span, .section-heading h2 span, .about-copy h2 span, .languages-inner h2 span
 .evidence-copy .text-link,
 .evidence-data-row span,
 .evidence-data-row b,
-.testimonial-attribution b,
-.testimonial-attribution small,
 .footer-label,
 .footer-bottom { font-size: 13.8px; }
 .journey-center { font-size: 14.95px; }
@@ -412,8 +422,6 @@ h1 span, .section-heading h2 span, .about-copy h2 span, .languages-inner h2 span
   .evidence-copy .text-link,
   .evidence-data-row span,
   .evidence-data-row b,
-  .testimonial-attribution b,
-  .testimonial-attribution small,
   .footer-label,
   .footer-bottom { font-size: 12.65px; }
   .button,

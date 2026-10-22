@@ -14,7 +14,7 @@ const services = [
     title: "Analytics & insight",
     description:
       "Turn scattered information into useful answers your whole team can act on.",
-    icon: "⌁",
+    icon: "⌁", 
   },
   {
     number: "03",
@@ -155,9 +155,21 @@ const solutionCards = [
   },
 ];
 
-const languages = ["English", "Hindi", "Add supported language"];
+const languages = [
+  "Mandarin",
+  "Chinese",
+  "Japanese",
+  "Korean",
+  "Vietnamese",
+  "Portuguese",
+  "Dutch",
+  "English",
+  "Cantonese",
+  "German",
+  "French",
+];
 const partnerLogos = [
-  { name: "Appen" },
+  { name: "Appen", src: "/logos/Appen%20(2).svg" },
   { name: "Google Cloud", src: "/logos/google-cloud.svg" },
   { name: "TransPerfect", src: "/logos/transperfect-cropped.png" },
   { name: "LXT AI", src: "/logos/lxt-ai-cropped.png" },
@@ -225,7 +237,6 @@ function SiteFooter() {
       <div className="section-wrap footer-main">
         <div className="footer-brand-col">
           <Brand light logo />
-          <p>Curious by nature.<br />Clear by design.</p>
         </div>
         <div className="footer-links-col">
           <span className="footer-label">EXPLORE</span>
@@ -348,10 +359,6 @@ function HomePage() {
               <a className="button button-dark" href="#contact">Let’s make sense of it <ArrowIcon diagonal /></a>
               <a className="text-link" href="#work">Explore our approach <ArrowIcon /></a>
             </div>
-            <div className="hero-proof">
-              <span className="proof-icon">✳</span>
-              <p>Curious by nature.<br /><b>Clear by design.</b></p>
-            </div>
           </div>
           <div className="hero-art">
             <div className="art-orbit orbit-one" />
@@ -470,11 +477,11 @@ function HomePage() {
             </div>
             <div className="language-list">
               {languages.map((language, index) => (
-                <div className={index === 2 ? "language-item language-placeholder" : "language-item"} key={language}>
-                  <span>{String(index + 1).padStart(2, "0")}</span><b>{language}</b>{index < 2 && <i>●</i>}
+                <div className="language-item" key={language}>
+                  <span>{String(index + 1).padStart(2, "0")}</span><b>{language}</b><i>●</i>
                 </div>
               ))}
-              <p>Confirm the languages your team supports and the level of service available in each.</p>
+              <p>Language support across 300+ languages and dialects.</p>
             </div>
           </div>
         </section>
@@ -497,34 +504,44 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="testimonial-section">
-          <div className="section-wrap testimonial-inner">
-            <span className="quote-mark">“</span>
-            <div className="testimonial-content">
-              <div className="eyebrow">A GOOD WORD GOES A LONG WAY</div>
-              <blockquote>A place for a real client’s words about what it’s like to work with Datovia Playhouse.</blockquote>
-              <div className="testimonial-attribution"><span className="avatar-placeholder">+</span><span><b>Approved client name</b><small>Role / Company · Add with permission</small></span></div>
-            </div>
-            <span className="testimonial-count">01 <i>/</i> 01</span>
-          </div>
-        </section>
-
         <section className="contact-section section-wrap section-pad" id="contact">
           <div className="contact-card">
             <div className="contact-left">
-              <div className="eyebrow"><span className="status-dot" /> YOUR NEXT GOOD QUESTION</div>
-              <h2>Let’s make<br />something <span>clear.</span></h2>
-              <p>Have a challenge, a hunch, or a wonderfully messy spreadsheet? We’d love to hear about it.</p>
-              <Link className="button button-lime" to="/contact">Get in touch <ArrowIcon diagonal /></Link>
+              <div className="contact-heading-row">
+                <h2>Already know what <span>you’re looking for?</span></h2>
+                {/* <span className="contact-client-name">Appen</span> */}
+              </div>
+              <p>Tell us what you need and we’ll help you find the right next step.</p>
+              <Link className="button button-lime" to="/contact">Book a meeting <ArrowIcon diagonal /></Link>
             </div>
             <div className="contact-right">
               <div className="contact-orbit" />
-              <div className="contact-symbol">✳</div>
-              <span>GOOD THINGS<br />START HERE</span>
+              {/* <div className="contact-symbol">✳</div> */}
+              <section className="testimonial-section">
+          <div className="section-wrap testimonial-inner">
+            <div className="testimonial-content" aria-label="Client testimonial">
+              <div className="testimonial-name">
+                <img src="/logos/Appen%20(2).svg" alt="Appen logo" />
+              </div>
+              <blockquote> I’ve had the pleasure of working with Andovar on several projects, and I’ve always been impressed by their professionalism and dedication to delivering top-quality AI training data. They are a trusted partner who I continually look to for new opportunities.</blockquote>
+            </div>
+          </div>
+        </section>
               <Link to="/contact" aria-label="Contact Datovia Playhouse"><ArrowIcon diagonal /></Link>
             </div>
           </div>
         </section>
+
+        {/* <section className="testimonial-section">
+          <div className="section-wrap testimonial-inner">
+            <div className="testimonial-content" aria-label="Client testimonial">
+              <div className="testimonial-name">
+                <img src="/logos/Appen%20(2).svg" alt="Appen logo" />
+              </div>
+              <blockquote>I’ve had the pleasure of working with Andovar on several projects, and I’ve always been impressed by their professionalism and dedication to delivering top-quality AI training data. They are a trusted partner who I continually look to for new opportunities.</blockquote>
+            </div>
+          </div>
+        </section> */}
       </main>
     </>
   );
@@ -542,7 +559,7 @@ function AboutPage() {
         <div className="inner-story-visual"><div className="about-orbit orbit-a" /><div className="about-orbit orbit-b" /><div className="about-orbit orbit-c" /><div className="about-center"><span>DP</span><small>PEOPLE<br />FIRST</small></div></div>
         <div className="inner-story-copy">
           <div className="eyebrow">OUR APPROACH</div>
-          <h2>Curious by nature.<br /><span>Clear by design.</span></h2>
+          <h2>Thoughtful data.<br /><span>Useful outcomes.</span></h2>
           <p>We’re a collaborative team that believes good data work should make life clearer—not more complicated. We start by listening, ask better questions, and shape the right mix of insight and technology around the people who will use it.</p>
           <p>This page is ready for your company story, team introductions, working culture, and behind-the-scenes photos.</p>
           <div className="culture-tags"><span>Open minds</span><span>Shared ownership</span><span>Always learning</span></div>
@@ -666,96 +683,268 @@ function ContactPage() {
 
 const privacySections = [
   {
-    title: "Who and what this policy covers",
+    title: "1. Introduction and scope",
     paragraphs: [
-      "This policy explains how Datovia Playhouse LLP handles personal information in connection with this website, enquiries, services, and business engagements. Depending on the relationship, this may include information about clients, employees, applicants, independent contractors, freelancers, project participants, and other people whose information is handled as part of a project.",
-      "Where we handle personal information for a client as part of a project, the relevant project instructions and contractual commitments also apply.",
+      "Datovia Playhouse LLP (Datovia Playhouse, we, us, or our) respects your privacy and is committed to protecting personal information handled through our website, business activities, and services. This policy explains how information may be collected, used, shared, retained, and protected when you visit datoviaplayhouse.com, contact us, apply for work, participate in a data collection project, work with us as a freelancer or vendor, or engage with us as a client or business partner.",
+      "Our services include multilingual data and language work such as transcription, translation, localization, audio data collection, annotation, data labeling, language evaluation, quality assurance, and datasets for AI and machine-learning applications. Additional privacy notices, consent forms, data-processing terms, or project agreements may apply to particular activities. Where law requires consent for a processing activity, we will seek it separately; website use alone does not constitute consent.",
     ],
   },
   {
-    title: "Information we handle and why",
+    title: "2. Information we collect",
     paragraphs: [
-      "Depending on how you work with us, information may include contact details and the contents of messages you send; information needed for onboarding or payment; and personal information contained in project materials, such as language, audio, image, video, or text data.",
-      "We use information to respond to enquiries, provide and administer services, manage project requirements, support quality and payment processes, and meet applicable legal or contractual obligations. We seek to collect only the information needed for the relevant purpose and handle it on a lawful basis.",
+      "Information you provide may include your name, email address, telephone number, country, business name, job title, qualifications, language proficiency, work history, project preferences, messages, inquiries, quotations or proposals requested, applications, onboarding details, invoices, tax or payment information, and information you provide when participating in surveys, interviews, recordings, or other projects.",
+      "Depending on the website configuration and technologies in use, technical information may be collected when you visit, such as your IP address, browser and device details, operating system, pages visited, approximate time spent, referral source, access logs, cookie identifiers where enabled, and performance or diagnostic information.",
+      "We may receive relevant information from clients, authorized representatives, project partners, recruitment partners, payment providers, vendors, or other organizations we work with. We expect those sources to have an appropriate legal basis and permissions to share it.",
+      "For language data and AI projects, information may include audio or voice recordings, video or images, transcripts, translations, annotations, language assessments, speaker or project identifiers, task metadata, language, dialect or accent attributes, recording quality, task acceptance details, consent records, and participation information. Project notices and agreements describe the specific information involved. Whether voice data is biometric or otherwise specially regulated depends on its nature, use, processing, and applicable law.",
     ],
   },
   {
-    title: "Confidentiality and access",
+    title: "3. How we use information",
     paragraphs: [
-      "Personal information and project materials are treated as confidential and used only for authorized business purposes. Access is limited to authorized people who need the information for their work. People and service providers handling information on our behalf are expected to follow applicable confidentiality obligations.",
+      "We may use information to operate, secure, troubleshoot, and improve the website; respond to inquiries and maintain business relationships; deliver and coordinate services; recruit, onboard, and manage project participation; assign tasks, review submissions, perform quality assurance, and coordinate project delivery; process invoices, payments, accounting, and tax records; prepare, organize, annotate, license, and deliver datasets under applicable permissions and agreements; and support authorized AI or machine-learning projects.",
+      "We may also use information to prevent fraud and misuse, protect systems and operations, meet legal, regulatory, contractual, and recordkeeping obligations, improve business and service quality, and send service or marketing communications where legally permitted. We will not use information for a materially different purpose where additional notice, consent, or another legal basis is required and has not been obtained.",
     ],
   },
   {
-    title: "Sharing and international processing",
+    title: "4. Legal grounds for processing",
     paragraphs: [
-      "We may make information available to authorized personnel and service providers where needed for the purposes described above, subject to appropriate confidentiality obligations. Information may be processed using cloud-based infrastructure and transferred across borders where permitted by applicable law and relevant contractual commitments.",
+      "Where applicable law requires a legal basis, processing may rely on your consent, steps requested by you before entering into a contract, performance of a contract, compliance with legal obligations, or another lawful basis recognized by the relevant law. You may withdraw consent where permitted; withdrawal does not affect processing lawfully completed before it. Separate participant, service, and data-processing agreements may provide additional details.",
     ],
   },
   {
-    title: "Retention and security",
+    title: "5. How we share information",
     paragraphs: [
-      "We retain personal information only for as long as needed for its purpose, or for longer where required by law or contract, and then securely dispose of it. Personal information used for onboarding and payment processes is handled securely. Project contributors may be required to delete project materials when instructed or when the applicable project requirements say to do so.",
-      "We use appropriate administrative, technical, and physical safeguards to help protect information against unauthorized access, disclosure, loss, or misuse. No method of handling or storing information can be guaranteed to be completely secure.",
+      "We may share relevant information with service providers supporting website hosting, infrastructure, business email and communications, project management, collaboration, secure storage and data processing, payments and finance, recruitment and verification, administration, security, analytics, or technical support. We aim to limit sharing to what is reasonably necessary and use appropriate contractual and security measures where required.",
+      "For an agreed project, we may share project information and deliverables—including approved recordings, transcripts, annotations, or related metadata—with clients, authorized partners, or recipients identified in the applicable agreement, subject to participant permissions and law.",
+      "We may also disclose information to comply with law, valid legal process or lawful public-authority requests; protect rights and safety, investigate suspected fraud, or enforce agreements; or as part of a merger, restructuring, financing, acquisition, or asset transfer, subject to applicable law and safeguards.",
+      "Datovia Playhouse LLP does not sell personal information for money. Processing or sharing in an authorized service, dataset, or AI project must still follow its agreement, relevant permissions, and applicable law.",
     ],
   },
   {
-    title: "Your privacy rights",
+    title: "6. Data protection and security",
     paragraphs: [
-      "Where applicable law provides, you may ask to access, correct, or delete your personal information. To make a request or report a suspected privacy incident, contact privacy@datoviaplayhouse.com. Access requests are handled within 30 calendar days unless a different period is required by law.",
+      "We use reasonable safeguards appropriate to the information and risks to help protect personal information from unauthorized access, loss, misuse, alteration, disclosure, or destruction. Depending on the system or project, measures may include role-based access, confidentiality obligations, secure transfer and storage, account protection, data minimization, controlled sharing, monitoring, incident response, and contractual requirements for service providers.",
+      "No electronic storage or transmission method is completely secure. If a personal data breach occurs, we will assess and address it and notify affected individuals or authorities where required by law. You are responsible for protecting credentials, devices, and confidential information you access through our services.",
     ],
   },
   {
-    title: "Website services and external resources",
+    title: "7. Data retention",
     paragraphs: [
-      "This website loads fonts from Google Fonts. When your browser requests those fonts, Google may receive technical information such as your IP address and browser details. Google's handling of that information is governed by Google's own privacy information.",
-      "The website may link to third-party sites. We do not control their content or privacy practices, so please review their policies separately.",
-      "This website does not have an account-registration or online-submission service. If you use the contact form, it opens your default email application with the details you entered and a message addressed to hello@datoviaplayhouse.com. The website itself does not send or store that message. Your email application and email provider handle it if you choose to send it. If you email us directly, we will receive the information in your message and the contact details associated with it.",
+      "We retain personal information only as long as reasonably necessary for its purpose, subject to legal, contractual, and operational requirements. Retention may depend on the relationship and project, recordkeeping obligations, legal claims, consent, security, fraud prevention, and dispute resolution. Recruitment records may be retained for recruitment administration, while financial records may be retained for legally required accounting periods. Audio, transcripts, and dataset materials may have project-specific retention, deletion, or licensing terms. When information is no longer needed, we take reasonable steps to delete, anonymize, or securely dispose of it, subject to law and applicable agreements.",
     ],
   },
   {
-    title: "Changes to this policy",
+    title: "8. Your privacy rights and choices",
     paragraphs: [
-      "We review this policy regularly and may update it as our services, practices, or legal requirements change. The latest version will be published on this page.",
+      "Depending on your location and applicable law, you may be able to ask what personal information we process, request access, correction or deletion, withdraw consent, request restriction or object to certain processing, request a portable copy, opt out of marketing, or raise a concern with a data protection authority. These rights are subject to legal conditions and exceptions; we may need to retain information to comply with law, perform a contract, or establish or defend legal claims.",
+      "To submit a request, email privacy@datoviaplayhouse.com with the subject “Privacy Request — DatoviaPlayHouse LLP” and enough detail to identify the relevant records. We may request reasonable information to verify your identity or authority. We respond within the period required by applicable law and explain any refusal where legally required. We will not require you to waive legal rights as a condition of making a request.",
+    ],
+  },
+  {
+    title: "9. Marketing communications",
+    paragraphs: [
+      "We may send service-related messages necessary to respond to inquiries, administer projects, provide updates, or manage a business relationship. Where legally permitted, we may send marketing about our services, company news, or opportunities; we obtain prior consent where required. Opt out using an unsubscribe link where available or by emailing privacy@datoviaplayhouse.com. We may still send necessary transactional, contractual, security, or administrative communications.",
+    ],
+  },
+  {
+    title: "10. International data transfers",
+    paragraphs: [
+      "We may work with clients, vendors, freelancers, service providers, and project partners in different countries. Information may therefore be accessed, processed, or transferred across borders for authorized purposes. Where transfers are legally restricted, we take steps to meet applicable requirements and use appropriate safeguards where required, such as contractual protections, access restrictions, and data minimization.",
+    ],
+  },
+  {
+    title: "11. Third-party websites and services",
+    paragraphs: [
+      "This policy does not govern third-party websites or platforms we do not control. Review their privacy policies and terms before providing information. We are not responsible for independent third-party privacy practices except where applicable law or an agreement makes us responsible.",
+      "This website loads fonts from Google Fonts. When your browser requests those fonts, Google may receive technical information such as your IP address and browser details. Google's handling of that information is governed by Google's own privacy information. This website may also link to third-party sites.",
+    ],
+  },
+  {
+    title: "12. Children’s privacy",
+    paragraphs: [
+      "Our website is intended for individuals aged 18 and older. We do not knowingly collect personal information from children under 18 through the website without an appropriate legal basis and required permissions or safeguards. A project involving minors requires separate project review, appropriate notices, valid parental or guardian permissions where required, and safeguards mandated by law. If you believe a child has inappropriately provided us information, contact privacy@datoviaplayhouse.com.",
+    ],
+  },
+  {
+    title: "13. Website contact form",
+    paragraphs: [
+      "The website does not have account registration or online submission. The contact form opens your default email application with the details you entered and a message addressed to hello@datoviaplayhouse.com; the website itself does not send or store that message. Your email application and provider handle it if you choose to send it. If you email us directly, we receive the information in your message and associated contact details.",
+    ],
+  },
+  {
+    title: "14. Changes to this privacy policy",
+    paragraphs: [
+      "We may update this policy to reflect changes in our operations, website technologies, services, or legal requirements. The latest version will be published on this page. Where a material change requires additional notice or consent, we will take the required steps. We encourage you to review this policy periodically.",
+    ],
+  },
+  {
+    title: "15. Contact information",
+    paragraphs: [
+      "For questions, requests, complaints, or concerns about this policy or personal information, contact Datovia Playhouse LLP at privacy@datoviaplayhouse.com. For privacy-related inquiries, use the subject “Privacy Request — DatoviaPlayHouse LLP.” Our registered office is NRRD Office, House No. 210, Ashraful House, 2nd Floor, Shernagar, Dhubri, Assam – 783335, India.",
+    ],
+  },
+  {
+    title: "16. Cookie policy",
+    paragraphs: [
+      "Cookies are small text files that websites may store on your device. Similar technologies can include pixels, tags, scripts, and local storage. Their actual use depends on the website configuration and integrated services.",
+      "This website currently does not implement analytics, advertising, or cookie preference tools in its application code. It loads Google Fonts, which may involve third-party technical requests. The deployed hosting configuration and any future integrations should be checked to confirm whether additional cookies or similar technologies are used.",
+      "In general, strictly necessary cookies may support essential requested functions where permitted by law. Functional cookies may remember preferences; analytics cookies may measure website use and performance; advertising cookies, if implemented, may measure or personalize promotions. We will seek consent before activating non-essential cookies where required by law. We do not claim that these optional categories are currently in use.",
+    ],
+  },
+  {
+    title: "17. Cookie duration and third parties",
+    paragraphs: [
+      "Session cookies generally expire when a browser session ends; persistent cookies remain until they expire or are deleted. Actual duration depends on each cookie’s provider and configuration. First-party cookies are set by the website domain; third-party cookies may be set by external services integrated into the site. Third parties may process information under their own terms and privacy policies.",
+    ],
+  },
+  {
+    title: "18. Cookie preferences and browser controls",
+    paragraphs: [
+      "If a cookie preference tool becomes available, you can use it to accept or reject non-essential categories, select categories, change preferences, or withdraw consent where applicable. Strictly necessary cookies may continue where essential and permitted by law. Preferences may reset if you clear browser data or use another device or browser.",
+      "Most browsers allow you to view, block, or delete cookies through privacy or security settings. Blocking cookies may affect some website features. Browser settings may not provide the same controls as a website preference tool, where one is available.",
+    ],
+  },
+  {
+    title: "19. Cookie transparency and updates",
+    paragraphs: [
+      "The cookie inventory, purposes, providers, and durations should be verified against the live website configuration, rather than assumed. If analytics, advertising, or other non-essential technologies are introduced, this policy should be updated and required consent obtained before those technologies are activated. We may update this Cookie Policy as technologies and legal requirements change and will seek renewed consent for material changes where required.",
     ],
   },
 ];
 
 const termsSections = [
   {
-    title: "Using this website",
+    title: "1. Acceptance of the terms",
     paragraphs: [
-      "You may use this website for lawful, personal or business purposes. Do not misuse the website, attempt to disrupt its operation, or use its content in a way that violates applicable law or another person's rights.",
+      "These terms govern your access to and use of the Datovia Playhouse LLP website, including its content, features, resources, and services made available through the website. Datovia Playhouse provides language and localization services, multilingual data solutions, transcription, translation, annotation, data labeling, audio data collection, language evaluation, and related AI data services.",
+      "By accessing or using the website, you agree to these terms and the applicable Privacy Policy. If you do not agree, discontinue use of the website. The website is intended for individuals aged 18 or older and for businesses or other legal entities acting through authorized representatives. You represent that you have the legal capacity and authority to accept these terms.",
     ],
   },
   {
-    title: "Website information",
+    title: "2. Changes to these terms",
     paragraphs: [
-      "The website provides general information about Datovia Playhouse and its services. Descriptions, examples, illustrations, and sample project stories are for general information only and are not a promise of a particular result or professional advice.",
-      "We aim to keep the information useful and current, but we make no guarantee that all content is complete, accurate, or available at all times.",
+      "We may revise these terms at our discretion and publish changes on this page. Unless applicable law requires otherwise, changes take effect when published and apply to subsequent website use. Continued use after publication indicates acceptance to the extent permitted by law. Amendments to separate service or data agreements are governed by those agreements.",
     ],
   },
   {
-    title: "Ownership and permitted use",
+    title: "3. Website access",
     paragraphs: [
-      "Unless stated otherwise, the website's text, visual design, graphics, and other content are owned by Datovia Playhouse or used with permission. You may view and share links to the website for lawful purposes. Please do not reproduce or commercially use website content without permission, except where applicable law allows.",
+      "We may modify, suspend, restrict, or discontinue any part of the website, subject to applicable law and contractual obligations. We do not guarantee uninterrupted, secure, error-free, or continuous availability and may restrict access for maintenance, security, operational, or legal reasons.",
+      "You are responsible for arranging access, providing accurate and complete information through website forms or inquiries, maintaining the confidentiality of any credentials issued to you, reporting suspected unauthorized access, and complying with applicable laws. Do not knowingly provide false, misleading, fraudulent, or unauthorized information. Information submitted through the website is subject to our Privacy Policy.",
     ],
   },
   {
-    title: "Third-party websites",
+    title: "4. Intellectual property",
     paragraphs: [
-      "Links to third-party websites are provided for convenience. We are not responsible for their content, services, or terms.",
+      "Unless stated otherwise, website content—including text, graphics, logos, branding, designs, layouts, visual materials, and software—is owned by or licensed to Datovia Playhouse LLP and protected by applicable intellectual property laws. Rights remain with their respective owners. We grant you a limited, revocable, non-exclusive, non-transferable right to access and use the website for lawful informational and business purposes.",
+      "Except as permitted in writing or by law, do not reproduce, distribute, commercially exploit, modify, or create derivative works from website materials; remove proprietary notices; misuse our branding or imply an unauthorized affiliation; or reverse-engineer protected software. Third-party names, trademarks, and logos remain the property of their owners.",
+      "If you voluntarily provide feedback or suggestions, you permit us to evaluate and use them in our operations and services on a non-exclusive, worldwide, royalty-free basis to the extent permitted by law. This does not transfer ownership of your confidential information, personal data, or independently owned intellectual property.",
     ],
   },
   {
-    title: "Limits and applicable law",
+    title: "5. Website content and dataset samples",
     paragraphs: [
-      "Nothing in these terms limits any rights or remedies that cannot legally be limited. Any other liability limits and the law that applies to these terms depend on the circumstances and applicable law; have this section reviewed and completed for the jurisdiction where Datovia Playhouse operates before relying on it.",
+      "Website descriptions, projects, demonstrations, language capabilities, and sample materials are provided for informational and evaluation purposes unless expressly stated otherwise. Sample datasets, recordings, images, transcripts, annotations, or other demonstration materials may be used only for personal evaluation, demonstration, or internal non-commercial testing unless a separate written agreement authorizes more.",
+      "Without written authorization, do not sell, sublicense, redistribute, publish, or commercially exploit samples; use them to train, fine-tune, evaluate, or develop commercial AI systems; attempt to identify or re-identify individuals or extract confidential information; remove usage notices; or violate privacy, intellectual property, contractual, or legal rights.",
+      "Commercial dataset access, licensing, delivery, customization, and use must be agreed in writing. The applicable agreement sets the permitted purpose, scope, duration, territory, redistribution rights, confidentiality, and security requirements. A website description or sample does not grant ownership or unrestricted dataset rights. Use reasonable safeguards and follow applicable privacy, data protection, confidentiality, and security requirements when handling materials.",
     ],
   },
   {
-    title: "Changes to these terms",
+    title: "6. Permitted website use",
     paragraphs: [
-      "We may update these terms when the website or our services change. The latest version will be published on this page.",
+      "Use the website only for lawful purposes. Do not engage in fraud, impersonation, deception, or harassment; submit false credentials or project information; infringe others’ rights; send spam or malicious code; interfere with website operation or security; or attempt unauthorized access to systems, accounts, or restricted areas.",
+      "Do not scrape or collect website content using automated tools without written authorization, except where law permits. Do not conduct unauthorized vulnerability or penetration testing, misrepresent an affiliation or endorsement, evade restrictions through multiple accounts where accounts are offered, or unlawfully collect personal information. We may investigate suspected violations and take proportionate action consistent with applicable law.",
+    ],
+  },
+  {
+    title: "7. User submissions",
+    paragraphs: [
+      "The website may allow inquiries, feedback, applications, proposals, vendor information, project requirements, comments, or other submissions. You are responsible for ensuring submissions are accurate, lawful, non-malicious, do not infringe rights or disclose another party’s confidential information without authorization, and comply with privacy and data protection laws. You represent that you have the rights and permissions needed to submit them.",
+      "You authorize us to use submissions as reasonably necessary to receive, review, respond, and communicate with you about the requested services or engagement, subject to our Privacy Policy and applicable law. We do not acquire ownership of your underlying intellectual property solely because you submit it. Separate agreements govern materials they cover. We may decline or restrict submissions that we reasonably believe violate these terms or law.",
+    ],
+  },
+  {
+    title: "8. Confidentiality and personal information",
+    paragraphs: [
+      "Website submissions may include business contact details, project specifications, applications, or other operational information. Our processing of personal information is governed by our Privacy Policy and applicable law.",
+      "Do not submit passwords, payment-card details, sensitive personal information, confidential client datasets, or other restricted materials through general website forms unless the channel is expressly designed and authorized for that purpose. Use an appropriate secure channel and, where needed, a separate written confidentiality agreement to exchange confidential information. These terms do not override separate confidentiality obligations.",
+    ],
+  },
+  {
+    title: "9. Business inquiries and services",
+    paragraphs: [
+      "Website services may include translation, transcription, localization, language quality assurance, multilingual audio, text, image, and video data collection, annotation, data labeling, dataset preparation, language evaluation, speech data, AI data support, vendor recruitment, and project coordination.",
+      "Website descriptions, examples, language coverage, availability, and estimated delivery capabilities are informational and are not a binding offer or guarantee of availability, volume, pricing, delivery dates, or project acceptance. Fees, payment schedules, deliverables, quality standards, acceptance criteria, licensing, confidentiality, data protection, and liability must be established in a proposal, purchase order, statement of work, service agreement, or other written contract. That agreement governs the contracted services.",
+    ],
+  },
+  {
+    title: "10. Recruitment, freelancers, and vendors",
+    paragraphs: [
+      "Information about projects, vacancies, freelance opportunities, vendor onboarding, and recruitment is informational unless expressly stated otherwise. An application, profile, proposal, or inquiry does not guarantee selection, onboarding, project allocation, employment, or engagement.",
+      "Engagements are subject to applicable contracts, project instructions, eligibility criteria, and verification procedures. Applicants and vendors must provide accurate information and must not submit fraudulent documents or misrepresent their identity or qualifications. We may request further information, reject applications, or discontinue onboarding in accordance with law and applicable agreements. Payment, task acceptance, and project quality requirements are governed by the relevant written agreement or project terms.",
+    ],
+  },
+  {
+    title: "11. Monitoring, suspension, and termination",
+    paragraphs: [
+      "To the extent permitted by law, we may investigate suspected misuse, restrict violating content, suspend website access where reasonably necessary for security or legal compliance, refer suspected unlawful activity to authorities where appropriate or required, and take reasonable steps to protect the website, users, partners, and intellectual property.",
+      "We may suspend or terminate access for material violations, misuse, or conduct creating a legitimate security, legal, or operational risk. Where reasonably practicable and legally appropriate, we may provide notice or an opportunity to address the issue. Ending website access does not automatically end a separate service agreement, dataset license, or contract. Payments, refunds, suspension, and cancellation of contracted work are governed by the applicable agreement and law.",
+    ],
+  },
+  {
+    title: "12. Reliance on website information",
+    paragraphs: [
+      "Website information is provided for general informational purposes. We endeavor to keep it useful but do not guarantee it is complete, current, error-free, or suitable for every purpose. Service descriptions, samples, language lists, technical information, announcements, and illustrative results may change. Verify material information with us before relying on it for commercial, technical, legal, or operational decisions. Third-party information remains the responsibility of its provider; its inclusion does not necessarily imply endorsement.",
+    ],
+  },
+  {
+    title: "13. Third-party websites and services",
+    paragraphs: [
+      "The website may link to third-party websites, applications, platforms, or services for convenience or information. We do not control and are not responsible for their content, security, availability, policies, or practices. Their own terms and privacy policies govern your use. A link alone does not imply sponsorship, partnership, endorsement, or authorization by Datovia Playhouse LLP.",
+    ],
+  },
+  {
+    title: "14. Links to our website",
+    paragraphs: [
+      "You may link to our homepage if the link is lawful, fair, not misleading, does not damage our reputation, and does not imply an unauthorized association, partnership, sponsorship, or endorsement. Do not frame the website misleadingly, misrepresent your relationship with us, use our branding without authorization, or link from unlawful or rights-infringing content. We may request removal of unauthorized links where appropriate and permitted by law.",
+    ],
+  },
+  {
+    title: "15. Disclaimer of warranties",
+    paragraphs: [
+      "To the maximum extent permitted by applicable law, the website and its content are provided “as is” and “as available.” We do not warrant continuous or uninterrupted availability, freedom from errors or security vulnerabilities, accuracy or completeness of information, suitability for your requirements, or that downloadable materials will always be free from harmful components. You are responsible for device security, backups, and safeguards when accessing or downloading materials.",
+      "Nothing in these terms excludes or limits any warranty, right, or remedy that cannot lawfully be excluded or limited.",
+    ],
+  },
+  {
+    title: "16. Limitation of liability",
+    paragraphs: [
+      "To the maximum extent permitted by law, Datovia Playhouse LLP and its partners, employees, representatives, and service providers will not be liable for indirect, incidental, special, consequential, exemplary, or punitive losses arising from website access or use, including loss of profits, business opportunities, anticipated savings, data, goodwill, or business interruption where legally permissible.",
+      "We are not responsible for losses arising from circumstances beyond our reasonable control, unauthorized access caused by factors outside that control, third-party websites, or misuse of website materials. Nothing excludes or limits liability for fraud, willful misconduct, gross negligence where exclusion is prohibited, death or personal injury where prohibited, or other liability that cannot legally be limited. Contracted services and dataset licensing are governed by their applicable written agreement and law.",
+    ],
+  },
+  {
+    title: "17. Indemnification",
+    paragraphs: [
+      "To the extent permitted by law, you are responsible for losses, claims, liabilities, and reasonable costs arising directly from your unlawful website use, material breach of these terms, or infringement of another party’s rights through materials you submit. Where legally attributable to your conduct, you agree to indemnify Datovia Playhouse LLP and its partners, personnel, and authorized service providers against resulting third-party claims and reasonable legal expenses. This does not require indemnification for our own unlawful conduct or waive rights that cannot be waived.",
+    ],
+  },
+  {
+    title: "18. Governing law and jurisdiction",
+    paragraphs: [
+      "These terms are governed by the laws of India, subject to applicable conflict-of-law rules and mandatory legal requirements. Disputes relating to these terms or website use are subject to the competent courts in India, with venue determined by applicable law and relevant facts. A valid dispute-resolution, arbitration, or jurisdiction clause in a separate written agreement governs disputes within its scope. Nothing limits mandatory rights or remedies under applicable law.",
+    ],
+  },
+  {
+    title: "19. Waiver and severability",
+    paragraphs: [
+      "Failure to enforce a provision on one occasion does not waive the right to enforce it later. If a provision is unlawful, invalid, or unenforceable, it will be limited or severed to the minimum extent necessary, and the remaining provisions continue to apply to the extent permitted by law.",
+    ],
+  },
+  {
+    title: "20. Entire agreement",
+    paragraphs: [
+      "These terms, together with the applicable Privacy Policy and any other website policies expressly incorporated by reference, govern general access to and use of the website. They do not replace or override separate written agreements for services, employment or freelance engagements, dataset licensing, confidentiality, or other commercial arrangements. Where a separate agreement expressly governs a matter, it applies to that matter to the extent of any inconsistency, subject to applicable law.",
     ],
   },
 ];
@@ -937,8 +1126,8 @@ function LegalPage({ title, description, sections, contactEmail = "hello@datovia
 function PrivacyPolicyPage() {
   return (
     <LegalPage
-      title="Privacy policy"
-      description="How Datovia Playhouse handles personal information when you visit our website, contact us, or work with us."
+      title="Privacy & cookie policy"
+      description="How Datovia Playhouse handles personal information and cookies across our website, services, and projects."
       sections={privacySections}
       contactEmail="privacy@datoviaplayhouse.com"
     />
@@ -948,8 +1137,8 @@ function PrivacyPolicyPage() {
 function TermsPage() {
   return (
     <LegalPage
-      title="Terms & conditions"
-      description="The basic terms for visiting and using the Datovia Playhouse website."
+      title="Terms of use of the website"
+      description="The terms governing access to and use of the Datovia Playhouse website."
       sections={termsSections}
     />
   );
