@@ -21,7 +21,7 @@ const services = [
     title: "AI & automation",
     description:
       "Build practical, responsible workflows that give good ideas room to grow.",
-    icon: "✳",
+    icon: "AI",
   },
   {
     number: "04",
@@ -268,7 +268,7 @@ function SiteFooter() {
       </div>
       <div className="section-wrap footer-bottom">
         <span>© {new Date().getFullYear()} Datovia Playhouse. All rights reserved.</span>
-        <span>Made with curiosity <i>✳</i></span>
+        <span>Made with curiosity</span>
       </div>
     </footer>
   );
@@ -312,7 +312,6 @@ function DashboardVisual() {
         <span>View insights <ArrowIcon diagonal /></span>
       </div>
       <div className="floating-note">
-        <span className="note-icon">✳</span>
         <span><b>More signal.</b><small>Less noise.</small></span>
       </div>
     </div>
@@ -363,7 +362,6 @@ function HomePage() {
           <div className="hero-art">
             <div className="art-orbit orbit-one" />
             <div className="art-orbit orbit-two" />
-            <div className="art-spark spark-one">✳</div>
             <div className="art-spark spark-two">+</div>
             <DashboardVisual />
             <div className="art-index">INSIGHT / MADE / USEFUL</div>
@@ -375,7 +373,7 @@ function HomePage() {
           <div className="section-wrap trust-inner">
             <p>Good work starts with good questions.</p>
             <div className="trust-values">
-              <span><i>✳</i> Thoughtful by default</span>
+              <span>Thoughtful by default</span>
               <span><i>↗</i> Built for real life</span>
               <span><i>◌</i> Better, together</span>
             </div>
@@ -422,7 +420,6 @@ function HomePage() {
             ))}
           </div>
           <div className="client-note">
-            <span className="client-note-icon">✳</span>
             <p><b>What we do.</b> Datovia Playhouse delivers data annotation, data collection, data and model evaluation, and conversational AI services to help teams build better AI experiences.</p>
             <Link className="client-note-tag" to="/solutions">EXPLORE OUR SOLUTIONS ↗</Link>
           </div>
@@ -457,7 +454,6 @@ function HomePage() {
             <div className="about-orbit orbit-c" />
             <div className="about-center"><span>DP</span><small>PEOPLE<br />FIRST</small></div>
             <span className="about-side-label">A LITTLE LOGIC.<br />A LOT OF CURIOSITY.</span>
-            <span className="about-star">✳</span>
           </div>
           <div className="about-copy">
             <div className="eyebrow">A LITTLE ABOUT US</div>
@@ -516,14 +512,13 @@ function HomePage() {
             </div>
             <div className="contact-right">
               <div className="contact-orbit" />
-              {/* <div className="contact-symbol">✳</div> */}
               <section className="testimonial-section">
           <div className="section-wrap testimonial-inner">
             <div className="testimonial-content" aria-label="Client testimonial">
               <div className="testimonial-name">
                 <img src="/logos/Appen%20(2).svg" alt="Appen logo" />
               </div>
-              <blockquote> I’ve had the pleasure of working with Andovar on several projects, and I’ve always been impressed by their professionalism and dedication to delivering top-quality AI training data. They are a trusted partner who I continually look to for new opportunities.</blockquote>
+              <blockquote>I’ve had the pleasure of working with Appen on several projects, and I’ve always been impressed by their professionalism and dedication to delivering top-quality AI training data. They are a trusted partner who I continually look to for new opportunities.</blockquote>
             </div>
           </div>
         </section>
@@ -595,7 +590,7 @@ function CareersPage() {
           <p>Our culture is built around open minds, shared ownership, and continuous learning. We make space for different perspectives and care about the impact of what we create.</p>
           <div className="culture-tags"><span>Collaborative</span><span>People-first</span><span>Always learning</span></div>
         </div>
-        <div className="careers-visual" aria-hidden="true"><div className="careers-orbit orbit-a" /><div className="careers-orbit orbit-b" /><div className="careers-orbit orbit-c" /><span>GOOD IDEAS<br />COME FROM<br /><b>GOOD PEOPLE.</b></span><i>✳</i></div>
+        <div className="careers-visual" aria-hidden="true"><div className="careers-orbit orbit-a" /><div className="careers-orbit orbit-b" /><div className="careers-orbit orbit-c" /><span>GOOD IDEAS<br />COME FROM<br /><b>GOOD PEOPLE.</b></span></div>
       </section>
       <section className="open-roles section-wrap">
         <div className="eyebrow">OPPORTUNITIES</div>

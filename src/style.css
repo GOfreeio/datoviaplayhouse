@@ -71,7 +71,6 @@ h1 span, .section-heading h2 span, .about-copy h2 span, .languages-inner h2 span
 .orbit-one { width: 455px; height: 455px; }
 .orbit-two { width: 360px; height: 360px; border-style: dashed; opacity: .7; }
 .art-spark { position: absolute; z-index: 2; color: #87b49a; }
-.spark-one { top: 33px; right: 70px; font-size: 28.75px; }
 .spark-two { bottom: 52px; left: 31px; font-size: 32.2px; color: #c1db9d; }
 .dashboard { width: min(450px, 90%); height: 330px; padding: 27px 30px 19px; background: #214542; color: #f3f7f2; border-radius: 5px; position: relative; z-index: 1; box-shadow: 0 25px 70px rgba(31,56,44,.2); }
 .dashboard-top { display: flex; justify-content: space-between; align-items: flex-start; }
@@ -91,7 +90,6 @@ h1 span, .section-heading h2 span, .about-copy h2 span, .languages-inner h2 span
 .dashboard-bottom span:last-child { color: var(--lime); }
 .legend-dot { background: var(--lime); display: inline-block; width: 5px; height: 5px; border-radius: 50%; margin-right: 4px; }
 .floating-note { position: absolute; right: -21px; bottom: 56px; display: flex; align-items: center; gap: 10px; background: #fff; padding: 12px 17px 12px 12px; box-shadow: 0 12px 30px rgba(31,56,44,.12); border-radius: 3px; color: var(--ink); }
-.note-icon { width: 31px; height: 31px; display: grid; place-items: center; background: #edf6e5; color: #709b78; border-radius: 3px; }
 .floating-note b, .floating-note small { display: block; font-size: 10.35px; }
 .floating-note small { color: #829087; margin-top: 3px; }
 .art-index { position: absolute; right: -2px; top: 50%; writing-mode: vertical-rl; font-size: 9.2px; letter-spacing: 2px; color: #93a097; }
@@ -138,7 +136,6 @@ h1 span, .section-heading h2 span, .about-copy h2 span, .languages-inner h2 span
 .project-card-copy p { color: #6d7d72; font-size: 11.5px; line-height: 1.6; margin: 0; max-width: 390px; }
 .project-card-copy a { display: grid; place-items: center; flex: 0 0 36px; height: 36px; border: 1px solid #bdcec0; border-radius: 50%; font-size: 17.25px; }
 .client-note { display: flex; align-items: center; gap: 14px; margin-top: 24px; background: #fff; border: 1px solid #e6ebe6; padding: 16px 20px; }
-.client-note-icon { width: 32px; height: 32px; display: grid; place-items: center; background: #edf4ed; color: #75a383; border-radius: 50%; }
 .client-note p { margin: 0; color: #718078; font-size: 11.5px; flex: 1; }
 .client-note p b { color: #344b3e; margin-right: 4px; }
 .client-note-tag { color: #9aa69e; font-size: 9.2px; letter-spacing: 1px; }
@@ -165,7 +162,6 @@ h1 span, .section-heading h2 span, .about-copy h2 span, .languages-inner h2 span
 .about-center span { font: 700 35.65px var(--serifless); letter-spacing: -3px; }
 .about-center small { font-size: 8.05px; text-align: center; letter-spacing: 1.5px; line-height: 1.4; }
 .about-side-label { position: absolute; left: 20px; top: 20px; font-size: 9.2px; line-height: 1.6; color: #718579; letter-spacing: 1px; }
-.about-star { position: absolute; right: 31px; bottom: 30px; font-size: 31.05px; color: #92b97d; }
 .about-copy h2 { font-size: clamp(41.4px, 4.6vw, 56.35px); letter-spacing: -2.7px; }
 .about-copy > p { color: #6e7b73; font-size: 13.8px; line-height: 1.9; margin: 20px 0; }
 .about-copy > p.about-note { border-left: 2px solid #8bb394; padding-left: 13px; font-size: 11.5px; margin: 17px 0 21px; }
@@ -286,7 +282,6 @@ h1 span, .section-heading h2 span, .about-copy h2 span, .languages-inner h2 span
   .chart-area { height: 127px; }
   .chart-area svg { height: 100px; }
   .floating-note { right: -2px; bottom: 35px; }
-  .spark-one { right: 14px; }
   .art-index { right: 0; font-size: 6.9px; }
   .hero-scroll { bottom: 23px; }
   .trust-inner { align-items: flex-start; flex-direction: column; justify-content: center; gap: 16px; padding-block: 22px; }
@@ -466,7 +461,6 @@ h1 span, .section-heading h2 span, .about-copy h2 span, .languages-inner h2 span
 .careers-visual { min-height: 360px; position: relative; display: grid; place-items: center; overflow: hidden; background: #e8efe7; color: #587860; text-align: center; font: 700 21px/1.55 var(--serifless); letter-spacing: 2px; }
 .careers-visual > span { position: relative; z-index: 1; }
 .careers-visual b { color: #79a784; }
-.careers-visual i { position: absolute; right: 28px; bottom: 25px; color: #88ad7d; font-size: 30px; font-style: normal; }
 .careers-orbit { position: absolute; border: 1px solid rgba(90,132,102,.3); border-radius: 50%; }
 .careers-visual .orbit-a { width: 170px; height: 170px; }
 .careers-visual .orbit-b { width: 260px; height: 260px; border-style: dashed; }
